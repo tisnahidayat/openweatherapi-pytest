@@ -19,5 +19,6 @@ class APIClient:
         params = {"appid": self.api_key, **(params or {})}
         response = req.get(url, headers=self.headers, params=params)
         response.raise_for_status()
+        assert response.elapsed.total_seconds() < 2, "Response took too long"
         return response.json()
     
