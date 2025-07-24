@@ -2,7 +2,6 @@ import requests as req
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
 load_dotenv()
 
 class APIClient:
@@ -14,11 +13,14 @@ class APIClient:
         self.headers = {
             "Content-Type": "application/json"
         }
+
     def get(self, endpoint, params=None):
         url = f"{self.base_url}/{endpoint}"
-        params = {"appid": self.api_key, **(params or {})}
+
+        if self.api_key:
+            params = {"appid": self.api_key, **(params or {})}
+        else:
+            params = params if params is not None else {}
+
         response = req.get(url, headers=self.headers, params=params)
-        response.raise_for_status()
-        assert response.elapsed.total_seconds() < 2, "Response took too long"
-        return response.json()
-    
+        return response

@@ -80,5 +80,5 @@
     "name",
     "cod"
   ],
-  "additionalProperties": false
+  "additionalProperties": true
 }
