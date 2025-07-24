@@ -55,5 +55,4 @@ def test_by_coordinate(api_client):
     assert isinstance(json_response["wind"]["deg"], int), "Response 'wind.deg' should be an integer"
     assert isinstance(json_response["name"], str), "Response 'name' should be a string"
 
-    print("Test pertama berhasil dijalankan dengan sukses!")
 

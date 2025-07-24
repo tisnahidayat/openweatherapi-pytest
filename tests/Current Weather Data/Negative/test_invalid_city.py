@@ -32,6 +32,3 @@ def test_invalid_city(api_client):
     
     assert json_response["cod"] == value["cod"], "Response 'cod' should match expected value"
     assert json_response["message"] == value["message"], "Response 'message' should match expected value"
-
-    print("Test pertama berhasil dijalankan dengan sukses!")
-
