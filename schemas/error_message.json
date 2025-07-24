@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "cod": { "type": "string" },
+    "message": { "type": "string" }
+  }
+}
