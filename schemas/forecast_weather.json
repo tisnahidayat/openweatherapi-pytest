@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dt": { "type": "number" },
+          "main": {
+            "type": "object",
+            "properties": {
+              "temp": { "type": "number" },
+              "feels_like": { "type": "number" },
+              "temp_min": { "type": "number" },
+              "temp_max": { "type": "number" },
+              "sea_level": { "type": "number" },
+              "grnd_level": { "type": "number" },
+              "pressure": { "type": "number" },
+              "humidity": { "type": "number" },
+              "temp_kf": { "type": "number" }
+            },
+            "required": ["temp", "feels_like", "temp_min", "temp_max", "pressure", "sea_level", "grnd_level", "humidity", "temp_kf"]
+          },
+          "weather": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "number" },
+                "main": { "type": "string" },
+                "description": { "type": "string" },
+                "icon": { "type": "string" }
+              },
+              "required": ["id", "main", "description", "icon"]
+            }
+          },
+          "dt_txt": { "type": "string" }
+        },
+        "required": ["dt", "main", "weather", "dt_txt"]
+      }
+    },
+    "city": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "name": { "type": "string" },
+        "country": { "type": "string" }
+      },
+      "required": ["id", "name", "country"]
+    }
+  },
+  "required": ["list", "city"]
+}
